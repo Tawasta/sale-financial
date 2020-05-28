@@ -7,7 +7,7 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     @api.onchange('analytic_account_id')
-    def onchange_project_id_update_analytic_tags(self):
+    def onchange_analytic_account_id_update_analytic_tags(self):
         for record in self:
             if (record.analytic_account_id and
                     record.analytic_account_id.project_ids
